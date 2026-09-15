@@ -1,0 +1,81 @@
+{
+  "contract_version": "1.1",
+  "lifecycle": ["DESIGN", "BUILD", "DEPLOY", "DETECT", "RESPOND", "LEARN", "REDESIGN"],
+  "architecture_owner": "design-by-security",
+  "operations_owner": "security-copilot-v4",
+  "design_to_operations": {
+    "required": [
+      "CASE_ID",
+      "OBJECTIVE",
+      "ENVIRONMENT",
+      "ASSETS",
+      "IDENTITIES",
+      "DATA_FLOWS",
+      "TRUST_BOUNDARIES",
+      "ATTACK_SURFACE",
+      "THREATS",
+      "ATTACK_PATHS",
+      "SECURITY_REQUIREMENTS",
+      "CONTROLS",
+      "TELEMETRY",
+      "KNOWN_EVIDENCE",
+      "ASSUMPTIONS",
+      "CONSTRAINTS",
+      "RISK_CONTEXT",
+      "APPROVED_ACTIONS"
+    ],
+    "uncertainty_policy": "UNKNOWN values remain UNKNOWN; assumptions are explicitly labeled and never promoted to evidence."
+  },
+  "operations_to_design": {
+    "required": [
+      "FINDING_ID",
+      "CASE_ID",
+      "EVIDENCE",
+      "AFFECTED_ASSETS",
+      "AFFECTED_IDENTITIES",
+      "CONFIRMED_ATTACK_PATH",
+      "ATT&CK_MAPPING",
+      "DETECTION_STATUS",
+      "CONTROL_EFFECTIVENESS",
+      "ROOT_CAUSE",
+      "SECURITY_DEBT",
+      "REQUIREMENT_CHANGE",
+      "CONTROL_CHANGE",
+      "VALIDATION_REQUIRED",
+      "RESIDUAL_RISK",
+      "REDESIGN_RECOMMENDATION"
+    ]
+  },
+  "mandatory_artifacts": [
+    "intent",
+    "architecture",
+    "assets",
+    "data_flows",
+    "trust_boundaries",
+    "attack_surface",
+    "threat_model",
+    "attack_paths",
+    "security_requirements",
+    "controls",
+    "telemetry",
+    "validation",
+    "security_gate",
+    "operational_handoff",
+    "lessons_learned",
+    "redesign"
+  ],
+  "security_gate": {
+    "allowed_decisions": ["APPROVE", "APPROVE_WITH_CONDITIONS", "REDESIGN_REQUIRED", "DO_NOT_APPROVE"],
+    "hard_fail": [
+      "critical_threat_without_requirement",
+      "requirement_without_validation",
+      "critical_attack_path_without_detection_or_explicit_gap",
+      "unresolved_critical_design_flaw",
+      "unknown_presented_as_evidence",
+      "destructive_action_without_human_approval",
+      "incident_closed_without_root_cause_feedback"
+    ]
+  },
+  "evidence_status": ["FACT", "EVIDENCE", "ANALYSIS", "ASSUMPTION", "UNKNOWN", "REQUIRES_VALIDATION"],
+  "control_classes": ["PREVENT", "DETECT", "RESPOND", "RECOVER", "COMPENSATE"]
+}

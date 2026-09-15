@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "minimum_score": 85,
+  "minimum_hard_fail_compliance": 100,
+  "forbidden_claim_patterns": [
+    "verified without evidence",
+    "confirmed CVE",
+    "ATT&CK ID: T[0-9]+(?:\\.[0-9]+)? without source",
+    "guaranteed secure",
+    "no risk"
+  ],
+  "required_sections_for_critical": [
+    "threat",
+    "security_requirement",
+    "validation",
+    "security_gate"
+  ],
+  "destructive_action_types": [
+    "delete",
+    "disable",
+    "isolate",
+    "block",
+    "rotate",
+    "revoke",
+    "quarantine",
+    "shutdown"
+  ]
+}
