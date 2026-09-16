@@ -1,12 +1,7 @@
-# Бинарные — Git НЕ трогает line endings
-*.skill  binary
-*.zip    binary
-*.gz     binary
-*.png    binary
-*.jpg    binary
-
-# Текстовые — LF везде
+# Сначала — общее правило для всех текстовых
 *        text=auto eol=lf
+
+# Конкретные текстовые расширения
 *.md     text eol=lf
 *.yml    text eol=lf
 *.yaml   text eol=lf
@@ -14,3 +9,10 @@
 *.sh     text eol=lf
 *.py     text eol=lf
 *.sha256 text eol=lf
+
+# Бинарные — В КОНЦЕ, чтобы перекрыть всё выше
+*.skill  -text -diff -merge
+*.zip    -text -diff -merge
+*.gz     -text -diff -merge
+*.png    -text -diff -merge
+*.jpg    -text -diff -merge
